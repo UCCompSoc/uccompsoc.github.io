@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	/* padding: 0; */
+
+	/* crude element border visualisation for debug */
+	padding: 10px;
+	border-radius: 1px;
+	border-color: red;
+	border-style: dotted; 
+}
+
+.header-container {
+	background-color: #1E2950;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	vertical-align: middle;
+
+}
+
+.nav-header {
+	width: 100%;
+	max-width: 1000px;
+	display: flex;
+}
+
+.nav-header-logo {
+	float: left;
+	align-content: flex-start;
+}
+
+.nav-header .logo {
+	height: 6rem;
+}
+
+/* right align, eww edition */
+.nav-header-links {
+	margin-left: auto;
+	margin-right: 0;
+	/* vertically align links to center */
+	display: flex;
+	align-items: center;
+}
+
+.nav-link {
+	color: inherit;
+	text-decoration: none;
+}
