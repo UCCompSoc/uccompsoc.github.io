@@ -4,33 +4,42 @@ title: CompSoc - University of Canterbury Computer Society
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<!-- Website under development, please don't index until it's on www -->
-	<meta name="robots" content="noindex, nofollow">
+{% include logo-ascii.html %}
 
-	<!-- auto refresh for dev purposes -->
-	<!-- <meta http-equiv="refresh" content="5"> -->
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-	<title>{{ page.title }}</title>
-</head>
+{% include head.html %}
 
 <!-- margin 0, padding 0 for no white border around the header-->
 
 <body>
 	<main>
-		<header class="header-outer">
-			{% include header.html %}
+		<header class="header-outer"
+			aria-label="Homepage background image. The image is of an event with many members present.">
+			<div class="header-footer-size-limiter">
+				{% include header.html %}
 
-			<div class="content">
-				<h1 class="short-tagline">kia_ora()</h1>
-				<!-- This is a holding page until the site is actually remade -->
-				<p class="long-tagline">Please visit <a href="https://www.compsoc.org.nz">the current CompSoc website</a></p>
+				<div class="content">
+					<h1 class="short-tagline">kia_ora()</h1>
+					<!-- This is a holding page until the site is actually remade -->
+					<p class="long-tagline">Please visit <a href="https://www.compsoc.org.nz">the 2022 CompSoc
+							website</a></p>
+					<form class="join-us-button" action="/">
+						<input class="join-us-button" type="submit" value="Join us for 2023"
+							onclick="alert('2023 sign up form not implemented')" />
+					</form>
+				</div>
 			</div>
 		</header>
+
+		<!-- TODO: insert page content here -->
+
+
+		<footer class="footer-outer">
+			<div class="header-footer-size-limiter">
+				{% include footer.html %}
+			</div>
+		</footer>
 	</main>
+
 </body>
 
 </html>
