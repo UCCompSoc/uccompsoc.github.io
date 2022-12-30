@@ -13,13 +13,15 @@ Uses Jekyll.
 ## TODO:
 
 - Investigate use of Bootstrap
-- Hamburger menu on small width
+- Hamburger menu on small width (css media-query)
 - Use white-on-transparent logos
 - Use a different background image on the homepage (in keeping with the rebranding theme - i.e. don't reuse old content if feasible)
 - Replace some text with icons
 - Add first-party analytics? (i.e. Matomo)
 - Footer TODO (in footer.html)
 - Favicon
+- 404 page
+- Nicer calendar embed
 
 ## Thanks to (for reference):
 
