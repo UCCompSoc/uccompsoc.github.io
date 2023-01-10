@@ -1,7 +1,7 @@
 * {
 	color: white; /* temporary */
 
-	/* crude element border visualisation for debug */
+	/* crude element border visualisation for debug (frequent meta-tag auto refresh got annoying with using browser devtools to see HTML element outlines) */
 	/* padding: 5px;
 	border-radius: 1px;
 	border-color: red;
@@ -15,7 +15,7 @@ html, body, main {
 }
 
 .header-outer {
-	/* this image has been around since at least 2016, and I have no idea where it is from internally */
+	/* this image has been around since at least 2016, and I have no idea internally where it is */
 	background-image: url(/assets/img/homepage_background.jpg), linear-gradient(rgba(10,10,10,0.5),rgba(10,10,10,0.5));
 	background-repeat: no-repeat;
 	background-position: center;
@@ -30,6 +30,7 @@ html, body, main {
 }
 
 .header-container {
+	/* From the CompSoc styleguide. Pantone 295C */
 	/* background-color: #1E2950; */
 	color: white;
 	display: flex;
@@ -41,7 +42,7 @@ html, body, main {
 
 .header-footer-size-limiter {
 	width: 100%;
-	max-width: 1000px;
+	max-width: 1600px;
 }
 
 .nav {
@@ -134,4 +135,10 @@ html, body, main {
 	display: flex;
 	align-items: center;
 	list-style: none;
+	flex-wrap: wrap;
+}
+
+.nav-footer-something {
+	display: flex;
+	justify-content: center;
 }
