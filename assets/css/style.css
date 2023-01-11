@@ -54,10 +54,6 @@
 	flex-direction: column;
 }
 
-header {
-	height: 6rem;
-}
-
 .nav {
 	display: flex;
 	/* necessary? */
@@ -66,8 +62,7 @@ header {
 }
 
 .nav-header-logo {
-	height: 100%;
-	max-width: 100%;
+	height: 6rem;
 }
 
 /* right align nav links */
