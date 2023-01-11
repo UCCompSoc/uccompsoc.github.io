@@ -31,3 +31,4 @@ To generate locally: [read the Jekyll quickstart guide](https://jekyllrb.com/doc
 - Favicon
 - 404 page (incl. 'did you click a link to a file?')
 - Nicer calendar embed
+- Print media CSS (extremely unlikely usecase)
