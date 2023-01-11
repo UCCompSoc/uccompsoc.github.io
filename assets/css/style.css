@@ -80,6 +80,8 @@
 	/* vertically align links to center */
 	display: flex;
 	list-style: none;
+	/* needed for nav menu */
+	align-items: center;
 }
 
 .nav-link {
@@ -105,14 +107,26 @@
 	.nav-header-links {
 		display: grid !important; /* nav-links normally overrides this */
 		justify-items: end;
-		padding: 20px;
-		gap: 30px;
 		
 		background-color: #1E2950;
+
+		
+		/* gap: 0px; */
+		position: relative;
+
 	}
 
 	.nav-header-link {
+		position: relative;
 		font-size: 20px;
+		margin: 0px;
+		/* not aligned to the checkbox, TODO: fix */
+		padding-right: 12px;
+
+		display: block;
+		
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 
 	.nav-menu-hidden-checkbox {
@@ -121,7 +135,7 @@
 
 	#narrow-viewpoint-menu-toggle-container {
 		display: block;
-		position: relative;
+		position: static;
 		top: 0;
 		right: 0;
 
@@ -140,8 +154,6 @@
 		width: 40px;
 		height: 32px;
 		position: relative;
-		top: 50%;
-		right: 0;
 		
 		cursor: pointer;
 		
@@ -153,23 +165,34 @@
 
 	#nav-header-menu {
 		position: fixed;
-		/* width: 100%; */
+		width: 50%;
+
+		right: 100%;
+		top: 0;
+		padding-top: 6em;
+
+		padding-bottom: 100%;
+
+		background-color: teal;
+
+		/* height: 60%; */
 		
 		-webkit-font-smoothing: antialiased;
 		/* to stop flickering of text in safari */
 		
 		transform-origin: 0% 0%;
 		transform: none;
-		margin-right: auto;
+		/* margin-right: auto; */
 	}
 
 	#narrow-viewpoint-menu-toggle-container input:checked ~ ul {
-		transform: translate(-100%, 0);
-		top: 4em;
+		/* transform: translate(100%, 0); */
+		/* top: 4em; */
 		/*
 		margin-top: -112px;
 		margin-left: -20px;
 		*/
+		right: 0px;
 	}
 }
 
