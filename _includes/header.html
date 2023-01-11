@@ -1,19 +1,39 @@
-<!-- The header navigation bar. -->
-<div class="header-container">
-	<nav class="nav">
-		<span class="nav-header-logo">
+<!-- The header navigation bar -->
+<header>
+	<nav class="nav primary-content">
+		<!-- This span shouldn't be necessary, but the a had a much longer width than the img -->
+		<span>
 			<a href="/">
 				<!-- TODO: update logo to transparent -->
-				<img src="/assets/img/logo-dark.png" alt="CompSoc logo" class="logo">
+				<img src="/assets/img/logo-dark.png" alt="CompSoc logo" class="nav-header-logo">
 			</a>
 		</span>
-		<ul class="nav-header-links">
-			<!-- link to homepage feels redundant - that's what the a tag on the logo is for... -->
-			<li><a class="nav-link" href="/">Home</a></li>
-			<li><a class="nav-link" href="/about-us">About</a></li>
-			<li><a class="nav-link" href="/events">Events</a></li>
-			<li><a class="nav-link" href="/sponsorship">Sponsorship</a></li>
-			<li><a class="nav-link" href="/contact-us">Contact</a></li>
-		</ul>
+
+		<!-- Show/hide nav menu on mobile devices without JS - https://codepen.io/erikterwan/pen/EVzeRP -->
+		<div class="nav" id="narrow-viewpoint-menu-toggle-container">
+			<!-- SESA use CSS instead of icons, and I couldn't figure out how to get CSS to dynamically increase the font size of the icons, so I used SESA's CSS -->
+			<input class="nav-menu-hidden-checkbox" type="checkbox">
+
+			<!-- 
+			<div class="narrow-viewpoint-burger-container">
+				<input class="nav-menu-hidden-checkbox" type="checkbox">
+				<!-- TODO: hide with checkbox with a burger -->
+				<!--
+				<div class="narrow-viewpoint-burger">
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+					<span class="burger-line"></span>
+				</div>
+				-->
+			<!-- 
+				</div>
+			-->
+			<ul class="nav-links" id="nav-header-menu">
+				<li><a class="nav-link" href="/about-us">About</a></li>
+				<li><a class="nav-link" href="/events">Events</a></li>
+				<li><a class="nav-link" href="/sponsorship">Sponsorship</a></li>
+				<li><a class="nav-link" href="/contact-us">Contact</a></li>
+			</ul>
+		</div>
 	</nav>
-</div>
+</header>

@@ -1,68 +1,78 @@
+/* Load fonts from first-party origin, for privacy reasons */
+@font-face {
+	font-family: "Overpass Mono";
+	src: url(/assets/fonts/overpass-mono-regular.woff2);
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url(/assets/fonts/Lato-Regular.woff2);
+}
+
 * {
-	color: white; /* temporary */
+	margin: 0;
+	padding: 0;
+	/* include padding and border in width and height for a given element */
+	box-sizing: border-box;
 
 	/* crude element border visualisation for debug (frequent meta-tag auto refresh got annoying with using browser devtools to see HTML element outlines) */
-	/* padding: 5px;
+
+	/*
+	padding: 5px;
 	border-radius: 1px;
 	border-color: red;
 	border-style: dotted; 
 	*/
 }
 
-html, body, main {
-	margin: 0;
-	padding: 0;
+.primary-content {
+	max-width: 70%;
+	margin: auto;
 }
 
-.header-outer {
+@media screen and (max-width: 1000px) {
+	.primary-content {
+		max-width: 95%;
+	}
+}
+
+.homepage-splash {
 	/* this image has been around since at least 2016, and I have no idea internally where it is */
 	background-image: url(/assets/img/homepage_background.jpg), linear-gradient(rgba(10,10,10,0.5),rgba(10,10,10,0.5));
+	background-blend-mode: overlay;
+	background-size: cover;
+	/* not necessary due to above line? */
 	background-repeat: no-repeat;
 	background-position: center;
 
-	width: 100%;
-	background-size: cover;
+	/* homepage image takes up 100% of the viewport */
+	min-height: 100vh;
 
-	background-blend-mode: overlay;
+	color: yellow; /* temporary */
 
-	display: flex;
-	justify-content: center;
-}
-
-.header-container {
-	/* From the CompSoc styleguide. Pantone 295C */
-	/* background-color: #1E2950; */
-	color: white;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	vertical-align: middle;
 }
 
-.header-footer-size-limiter {
-	width: 100%;
-	max-width: 1600px;
-}
-
-.nav {
-	width: 100%;
-	display: flex;
-}
-
-.nav-header-logo {
-	float: left;
-	align-content: flex-start;
-}
-
-.nav .logo {
+header {
 	height: 6rem;
 }
 
-/* right align, eww edition */
-.nav-header-links {
+.nav {
+	display: flex;
+	/* necessary? */
+	width: 100%;
+	max-height: 100%;
+}
+
+.nav-header-logo {
+	height: 100%;
+	max-width: 100%;
+}
+
+/* right align nav links */
+.nav-links {
 	margin-left: auto;
-	margin-right: 0;
 	/* vertically align links to center */
 	display: flex;
 	align-items: center;
@@ -77,68 +87,164 @@ html, body, main {
 	margin: 0px 15px;
 }
 
-.content {
-	/* artifically extend the content div for the dev purposes w.r.t. the bg image */
-	min-height: 800px;
-	padding-top: 20%;
+.nav-link:hover {
+	text-decoration: underline;
 }
 
-/* Load fonts from first-party origin, for privacy reasons */
-@font-face {
-	font-family: "Overpass Mono";
-	src: url(/assets/fonts/overpass-mono-regular.woff2);
+.nav-menu-hidden-checkbox {
+	display: none;
 }
 
-@font-face {
-	font-family: "Lato";
-	src: url(/assets/fonts/Lato-Regular.woff2);
+/* TODO: write JS to detect overflow of navbar items, and auto switch to burger icon */
+
+@media screen and (max-width: 600px) {
+	/* Super janky way to display the menu without requiring the separate nav menu. TODO: cleanup */
+	.nav-links {
+		display: grid;
+		justify-items: end;
+		padding: 10px 0;
+	}
+
+	.nav-menu-hidden-checkbox {
+		display: block;
+	}
+
+	#narrow-viewpoint-menu-toggle-container {
+		display: block;
+		position: relative;
+		top: 50px;
+		left: 50px;
+
+		z-index: 1;
+
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+	#narrow-viewpoint-menu-toggle-container .nav-menu-hidden-checkbox {
+		display: block;
+		width: 40px;
+		height: 32px;
+		position: absolute;
+		top: -7px;
+		left: -5px;
+		
+		cursor: pointer;
+		
+		opacity: 1; /* hide this */
+		z-index: 25; /* and place it over the hamburger */
+		
+		-webkit-touch-callout: none;
+	}
+
+	#nav-header-menu {
+	position: absolute;
+	width: 300px;
+	
+	-webkit-font-smoothing: antialiased;
+	/* to stop flickering of text in safari */
+	
+	transform-origin: 0% 0%;
+	transform: translate(-100%, 0);
+	
+	}
+
+	#narrow-viewpoint-menu-toggle-container input:checked ~ ul {
+		transform: none;
+	}
+}
+
+.burger-line {
+	height: 2px;
+	width: inherit;
+	background-color: white;
+}
+
+.homepage-primary-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+	padding: 150px 0;
 }
 
 .short-tagline {
 	font-family: "Overpass Mono";
 	font-size: 45px;
+	padding-bottom: 40px;
 }
 
 .long-tagline {
 	font-family: "Lato";
 	font-size: 35px;
+	padding-bottom: 30px;
+	/* h2 defaults to bold */
+	font-weight: normal;
+}
+
+.long-tagline a:link, .long-tagline a:visited {
+	color: inherit;
+}
+
+.join-us-button-container {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .join-us-button {
-	/* padding: 20px 40px; */
 	color: black;
 	font-family: "Overpass Mono";
 	font-size: 20px;
+	border-radius: 10px;
+}
+
+.join-us-button input {
+	padding: 30px 30px;
 }
 
 .join-us-button:hover {
 	cursor: pointer;
 }
 
-.footer-outer {
+.anchor-footer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: space-between;
+}
+
+footer {
 	width: 100%;
-	display: flex;
-	justify-content: center;
 	background-color: #1E2950;
+	position: absolute;
+	bottom: 0;
+	color: white;
+	padding: 20px 0;
 }
 
-/*
 .footer-container {
-}
-*/
-
-
-.nav-footer-links {
-	margin-left: auto;
-	margin-right: 0;
-	/* vertically align links to center */
 	display: flex;
-	align-items: center;
-	list-style: none;
-	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 30px;
 }
 
-.nav-footer-something {
+.footer-social-media-icon {
+	font-size: 1.25rem;
+}
+
+.nav-footer-wordmark {
 	display: flex;
 	justify-content: center;
+	height: 100%;
+	max-width: 100%;
+}
+
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.narrow-irc {
+	letter-spacing: -3px;
 }

@@ -4,41 +4,33 @@ title: CompSoc - University of Canterbury Computer Society
 <!DOCTYPE html>
 <html lang="en">
 
-{% include logo-ascii.html %}
-
 {% include head.html %}
 
-<!-- margin 0, padding 0 for no white border around the header-->
-
-<body>
+<body class="anchor-footer">
 	<main>
-		<header class="header-outer"
-			aria-label="Homepage background image. The image is of an event with many members present.">
-			<div class="header-footer-size-limiter">
-				{% include header.html %}
+		<section class="homepage-splash">
+		{% include header.html %}
 
-				<div class="content">
-					<h1 class="short-tagline">kia_ora()</h1>
-					<p class="long-tagline">CompSoc is the club for UC students studying Computer Science and Software Engineering, and Mathematics and Statistics.</p>
-					<!-- This is a holding page until the site is actually remade -->
-					<p class="long-tagline">Please visit <a href="https://www.compsoc.org.nz">the 2022 CompSoc
-							website</a></p>
-					<form class="join-us-button" action="/">
-						<input class="join-us-button" type="submit" value="Join us for 2023"
-							onclick="alert('2023 sign up form not implemented')" />
-					</form>
-				</div>
-			</div>
-		</header>
+		<section class="homepage-primary-text primary-content">
+			<h1 class="short-tagline">kia_ora()</h1>
+			<h2 class="long-tagline">CompSoc is the club for UC students studying Computer Science and Software Engineering, and Mathematics and Statistics.</h2>
+			<!-- This is a holding page until the site is actually remade -->
+			<h3 class="long-tagline">Please visit <a href="https://www.compsoc.org.nz">the 2022 CompSoc website</a></h3>
+			<div class="join-us-button-container">
+				<form class="join-us-button" action="/">
+					<input class="join-us-button disabled" type="submit" value="Join us for 2023"
+						onclick="alert('2023 sign up form not implemented')" />
+				</form>
+		</div>
+		</section>
+		</section>
 
-		<!-- TODO: insert page content here -->
+		<section>
+		{% include lorem-ipsum.html %}
+		</section>
 
+		{% include footer.html %}
 
-		<footer class="footer-outer">
-			<div class="header-footer-size-limiter">
-				{% include footer.html %}
-			</div>
-		</footer>
 	</main>
 
 </body>
