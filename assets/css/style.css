@@ -30,6 +30,21 @@
 	margin: auto;
 }
 
+.mid-page-content {
+	padding: 2rem 0;
+}
+
+.sponsor-box {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px 30px;
+}
+
+.sponsors-center {
+	text-align: center;
+	justify-content: center;
+}
+
 @media screen and (max-width: 1000px) {
 	.primary-content {
 		max-width: 95%;
@@ -37,16 +52,15 @@
 }
 
 .homepage-splash {
-	/* this image has been around since at least 2016, and I have no idea internally where it is */
-	background-image: url(/assets/img/homepage_background.jpg), linear-gradient(rgba(10,10,10,0.5),rgba(10,10,10,0.5));
+	background-image: url(/assets/img/homepage_background.jpg), linear-gradient(rgba(10,10,10,0.7),rgba(10,10,10,0.7));
 	background-blend-mode: overlay;
 	background-size: cover;
 	/* not necessary due to above line? */
 	background-repeat: no-repeat;
 	background-position: center;
 
-	/* homepage image takes up 100% of the viewport */
-	min-height: 100vh;
+	/* homepage image takes up at least 50% of the viewport */
+	min-height: 50vh;
 
 	color: yellow; /* temporary */
 
@@ -88,8 +102,8 @@
 	color: inherit;
 	text-decoration: none;
 	font-family: "Overpass Mono";
-	font-size: 15px;
-	margin: 0px 15px;
+	font-size: 16px;
+	padding: 0px 15px;
 }
 
 .nav-link:hover {
@@ -194,6 +208,20 @@
 		*/
 		right: 0px;
 	}
+
+	.homepage-primary-text {
+		padding: 50px 0 !important;
+		max-width: 100% !important;
+	}
+
+	.long-tagline {
+		font-size: 25px !important;
+		line-height: 1.4;
+	}
+
+	.two-column {
+		grid-template-columns: 1fr !important;
+	}
 }
 
 .burger-line {
@@ -208,6 +236,13 @@
 	justify-content: center;
 	flex: 1;
 	padding: 150px 0;
+	max-width: 70%;
+}
+
+.center {
+	margin: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .short-tagline {
@@ -228,24 +263,62 @@
 	color: inherit;
 }
 
-.join-us-button-container {
-	padding-top: 20px;
-	padding-bottom: 20px;
+.rounded-edges {
+	border-radius: 10px;
 }
 
 .join-us-button {
 	color: black;
 	font-family: "Overpass Mono";
 	font-size: 20px;
-	border-radius: 10px;
-}
-
-.join-us-button input {
-	padding: 30px 30px;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	width: fit-content;
 }
 
 .join-us-button:hover {
 	cursor: pointer;
+}
+
+.two-column {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.two-column-left {
+	float: left;
+}
+
+.two-column-right {
+	float: right
+}
+
+.two-column-item {
+	width: 100%;
+	/* object-fit: cover; */
+	padding: 20px;
+}
+
+.text-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.main-paragraph-text {
+	font-size: 25px;
+	font-family: Overpass Mono;
+	font-weight: 700;
+}
+
+.secondary-paragraph-text {
+	font-size: 20px;
+	font-family: Lato;
+	font-weight: 400;
 }
 
 .anchor-footer {
@@ -259,10 +332,13 @@
 footer {
 	width: 100%;
 	background-color: #1E2950;
-	position: absolute;
+	/* this is what the anchor-footer class is for (in body)
+	/* position: absolute; */
+	position: relative;
 	bottom: 0;
 	color: white;
 	padding: 20px 0;
+	margin-top: 50px;
 }
 
 .footer-container {
