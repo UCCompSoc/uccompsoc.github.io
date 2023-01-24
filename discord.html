@@ -1,0 +1,84 @@
+---
+title: CompSoc - Discord Server redirect
+permalink: /discord.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- TODO: merge into default layout with additional page-specific tag in head -->
+
+
+{% include logo-ascii.html %}
+
+<head>
+    <!-- The sole reason why head isn't included as usual -->
+    <!-- A HTTP 301 is preferred, but isn't possible on GitHub Pages. And we're not terribly interested in running a VM for apache2/nginx -->
+    <meta http-equiv="refresh" content="0; URL='https://discord.gg/Uf9hFksCCj'">
+    <link rel="canonical" href="https://discord.gg/Uf9hFksCCj">
+
+	<meta name="robots" content="noindex, nofollow">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+
+	<!-- Chrome on Android - theme Android status bar -->
+	<meta name="theme-color" content="#1E2950" />
+	
+	<!-- Fork Awesome icons -->
+	<link rel="stylesheet" type="text/css" href="/assets/fork-awesome/css/fork-awesome.css" />
+
+	<title>{{ page.title }}</title>
+
+	<!-- Matomo (self hosted analytics) -->
+	<!--
+		Primarily, this is for 404'd URLs (we don't have access to GitHub Pages server logs as we would with Apache or Nginx),
+		as well as for general interest (e.g. OS and browser used, browser type, uni/non-uni IP address prefix)
+		in the very rare case that a committee member has nothing else better to do with their life for a couple of minutes than to look at website analytics
+	-->
+	<script>
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+	_paq.push(["setCookieDomain", "*.compsoc.org.nz"]);
+	_paq.push(["setDomains", ["*.compsoc.org.nz","*.2023.compsoc.org.nz","*.www.compsoc.org.nz"]]);
+	_paq.push(["enableCrossDomainLinking"]);
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+	  var u="//matomo.compsoc.org.nz/";
+	  _paq.push(['setTrackerUrl', u+'matomo.php']);
+	  _paq.push(['setSiteId', '1']);
+	  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	  g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+  </script>
+  <noscript><p><img src="//matomo.compsoc.org.nz/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Matomo Code -->
+  
+  
+</head>
+
+
+
+<body class="anchor-footer">
+	<main>
+		{% include header.html %}
+
+
+        <section class="primary-content text-section text-center">
+            <p>Redirecting to the CompSoc Discord server, please wait...</p>
+
+            <br>
+
+            <p>If it has been a few seconds, <a href="https://discord.gg/Uf9hFksCCj">click here</a> to go to the CompSoc Discord server.</p>
+        
+        </section>
+	</main>
+	{% include footer.html %}
+
+
+</body>
+
+</html>
