@@ -57,7 +57,7 @@
 	background-size: cover;
 	/* not necessary due to above line? */
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: center 60%;
 
 	/* homepage image takes up at least 50% of the viewport */
 	min-height: 50vh;
@@ -77,10 +77,19 @@
 	align-items: center;
 }
 
-.nav-header-logo {
-	height: 6rem;
+.nav-logo {
 	/* causes parent a to be placed under the img otherwise - img is inline by default */
 	display: block;
+	margin: 1rem 0;
+	max-width: 100%;
+}
+
+.nav-header-logo {
+	height: 4rem;
+}
+
+.nav-footer-logo {
+	height: 2rem;
 }
 
 /* right align child in parent 'display: flex' */
