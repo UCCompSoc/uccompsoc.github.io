@@ -177,6 +177,10 @@
 		display: flex !important;
 	}
 
+	.mobile-exit {
+		display: unset !important;
+	}
+
 	.homepage-primary-text {
 		padding: 50px 0 !important;
 		max-width: 100% !important;
@@ -203,6 +207,7 @@
 
 /* Not perfect padding/positioning of the close button (menu and close are independent) */
 .mobile-exit {
+	display: none;
 	cursor: pointer;
 	font-size: 4rem;
 	padding-top: 10px !important;
