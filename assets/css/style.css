@@ -77,6 +77,10 @@
 	align-items: center;
 }
 
+.nav .show {
+	right: 0;
+}
+
 .nav-logo {
 	/* causes parent a to be placed under the img otherwise - img is inline by default */
 	display: block;
@@ -95,6 +99,7 @@
 /* right align child in parent 'display: flex' */
 .right-align {
 	margin-left: auto;
+	width: max-content;
 }
 
 /* right align nav links */
@@ -119,9 +124,8 @@
 	text-decoration: underline;
 }
 
-.nav-menu-hidden-checkbox {
-	display: none;
-}
+/* SESA */
+
 
 /* TODO: write JS to detect overflow of navbar items, and auto switch to burger icon */
 
@@ -131,8 +135,7 @@
 		display: grid !important; /* nav-links normally overrides this */
 		justify-items: end;
 		
-		background-color: #1E2950;
-
+		/* background-color: #1E2950; */
 		
 		/* gap: 0px; */
 		position: relative;
@@ -152,53 +155,15 @@
 		padding-bottom: 1em;
 	}
 
-	.nav-menu-hidden-checkbox {
-		display: block;
-	}
-
-	#narrow-viewpoint-menu-toggle-container {
-		display: block;
-		position: static;
-		top: 0;
-		right: 0;
-
-		/* for right-align to work, a width needs to be set - https://stackoverflow.com/a/9226241 */
-		width: max-content;
-		
-
-		z-index: 1;
-
-		-webkit-user-select: none;
-		user-select: none;
-	}
-
-	#narrow-viewpoint-menu-toggle-container .nav-menu-hidden-checkbox {
-		display: block;
-		width: 40px;
-		height: 32px;
-		position: relative;
-		
-		cursor: pointer;
-		
-		opacity: 1; /* hide this */
-		z-index: 25; /* and place it over the hamburger */
-		
-		-webkit-touch-callout: none;
-	}
-
-	#nav-header-menu {
+	.nav-header-menu {
 		position: fixed;
 		width: 50%;
+		height: 100%;
 
 		right: 100%;
 		top: 0;
-		padding-top: 6em;
 
-		padding-bottom: 100%;
-
-		background-color: teal;
-
-		/* height: 60%; */
+		background-color: black;
 		
 		-webkit-font-smoothing: antialiased;
 		/* to stop flickering of text in safari */
@@ -208,14 +173,8 @@
 		/* margin-right: auto; */
 	}
 
-	#narrow-viewpoint-menu-toggle-container input:checked ~ ul {
-		/* transform: translate(100%, 0); */
-		/* top: 4em; */
-		/*
-		margin-top: -112px;
-		margin-left: -20px;
-		*/
-		right: 0px;
+	.mobile-burger {
+		display: flex !important;
 	}
 
 	.homepage-primary-text {
@@ -233,10 +192,22 @@
 	}
 }
 
-.burger-line {
-	height: 2px;
-	width: inherit;
-	background-color: white;
+.mobile-burger {
+	flex-direction: column;
+	justify-content: space-between;
+	display: none;
+	cursor: pointer;
+	font-size: 4rem;
+	color: white;
+}
+
+/* Not perfect padding/positioning of the close button (menu and close are independent) */
+.mobile-exit {
+	cursor: pointer;
+	font-size: 4rem;
+	padding-top: 10px !important;
+	padding-bottom: 20px;
+	padding-right: -5%;
 }
 
 .homepage-primary-text {

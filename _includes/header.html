@@ -1,38 +1,30 @@
 <!-- The header navigation bar -->
+<!-- adapted from https://github.com/ausesa/ausesa.github.com/blob/master/_includes/nav.html -->
 <header>
 	<nav class="nav primary-content">
 		<a href="/">
+			<!-- TODO: use wordmark on wide viewports -->
 			<img src="/assets/img/icon-light.svg" alt="CompSoc icon - /* " class="nav-logo nav-header-logo">
 		</a>
 
-		<!-- Show/hide nav menu on mobile devices without JS - https://codepen.io/erikterwan/pen/EVzeRP -->
-		<div class="nav right-align" id="narrow-viewpoint-menu-toggle-container">
-			<!-- SESA use CSS instead of icons, and I couldn't figure out how to get CSS to dynamically increase the font size of the icons, so I used SESA's CSS -->
-			<input class="nav-menu-hidden-checkbox" type="checkbox">
+		<nav class="nav right-align">
+			<a class="mobile-burger"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-			<!-- TODO: lock page from scrolling when menu is open (i.e. when checkbox is checked) -->
-			<!-- TODO: hide checkbox and replace with burger menu icon -->
+			<!-- using div as container, so that menu overlay can use 100% height without changing li vetical gaps -->
+			<div class="nav-header-menu">
+				<ul class="nav-links nav-header-links">
 
-			<!-- 
-			<div class="narrow-viewpoint-burger-container">
-				<input class="nav-menu-hidden-checkbox" type="checkbox">
-				<!-- TODO: hide with checkbox with a burger -->
-				<!--
-				<div class="narrow-viewpoint-burger">
-					<span class="burger-line"></span>
-					<span class="burger-line"></span>
-					<span class="burger-line"></span>
-				</div>
-				-->
-			<!-- 
-				</div>
-			-->
-			<ul class="nav-links nav-header-links" id="nav-header-menu">
-				<li><a class="nav-link nav-header-link" href="/about-us">About</a></li>
-				<li><a class="nav-link nav-header-link" href="/events">Events</a></li>
-				<li><a class="nav-link nav-header-link" href="/sponsorship">Sponsorship</a></li>
-				<li><a class="nav-link nav-header-link" href="/contact-us">Contact</a></li>
-			</ul>
-		</div>
+					<li>
+						<a class="nav-link nav-header-link mobile-exit">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li><a class="nav-link nav-header-link" href="/about-us">About</a></li>
+					<li><a class="nav-link nav-header-link" href="/events">Events</a></li>
+					<li><a class="nav-link nav-header-link" href="/sponsorship">Sponsorship</a></li>
+					<li><a class="nav-link nav-header-link" href="/contact-us">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
 	</nav>
 </header>

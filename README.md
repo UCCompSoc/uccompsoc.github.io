@@ -23,12 +23,10 @@ To generate locally: [read the Jekyll quickstart guide](https://jekyllrb.com/doc
 
 - Investigate use of Bootstrap
 - Hamburger menu on small width (css media-query)
-- Use white-on-transparent logos
-- Use a different background image on the homepage (in keeping with the rebranding theme - i.e. don't reuse old content if feasible)
 - Replace some text with icons
 - Add first-party analytics? (i.e. Matomo)
 - Footer (see footer.html for specific TODO items)
-- Favicon
 - 404 page (incl. 'did you click a link to a file?')
 - Nicer calendar embed
 - Print media CSS (extremely unlikely usecase)
+- noscript on a narrow viewport should autoexpand navbar (see previous commit)
